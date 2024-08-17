@@ -20,9 +20,9 @@ async function main() {
     const proposalDetails = await TR3DAO.getProposal(proposalId);
     console.log(`Proposal ${proposalId} details:`);
     console.log(`Description: ${proposalDetails[0]}`);
-    console.log(`Yes Votes: ${proposalDetails[1]}`);
-    console.log(`No Votes: ${proposalDetails[2]}`);
-    console.log(`Start Time: ${new Date(proposalDetails[3] * 1000).toLocaleString()}`);
+    console.log(`Yes Votes: ${proposalDetails[1].toString()}`);
+    console.log(`No Votes: ${proposalDetails[2].toString()}`);
+    console.log(`Start Time: ${new Date(Number(proposalDetails[3]) * 1000).toLocaleString()}`);
     console.log(`Executed: ${proposalDetails[4]}`);
 
     // Example: Voting on the proposal
@@ -52,9 +52,9 @@ async function main() {
         const topProposalDetails = await TR3DAO.getProposal(topProposals[i]);
         console.log(`Top Proposal ${i + 1} details:`);
         console.log(`Description: ${topProposalDetails[0]}`);
-        console.log(`Yes Votes: ${topProposalDetails[1]}`);
-        console.log(`No Votes: ${topProposalDetails[2]}`);
-        console.log(`Start Time: ${new Date(topProposalDetails[3] * 1000).toLocaleString()}`);
+        console.log(`Yes Votes: ${topProposalDetails[1].toString()}`);
+        console.log(`No Votes: ${topProposalDetails[2].toString()}`);
+        console.log(`Start Time: ${new Date(Number(topProposalDetails[3]) * 1000).toLocaleString()}`);
         console.log(`Executed: ${topProposalDetails[4]}`);
     }
 }
